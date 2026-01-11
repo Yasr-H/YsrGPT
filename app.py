@@ -4,7 +4,7 @@ from groq import Groq
 import os
 
 # PAGE CONFIG & PROFESSIONAL STYLE
-st.set_page_config(page_title="🛡️ YsrGPT", page_icon="🛡️", layout="centered")
+st.set_page_config(page_title="YsrGPT", page_icon="🛡️", layout="centered")
 
 # Custom CSS for a clean, professional "Executive" look
 st.markdown("""
