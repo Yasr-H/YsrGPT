@@ -61,7 +61,7 @@ def load_university_manual():
 
 manual_text = load_university_manual()
 
-# --- 4. PROFESSIONAL SIDEBAR ---
+# --- SIDEBAR ---
 with st.sidebar:
     st.markdown("## 🛡️ YsrGPT")
     st.caption("v2.5 • Premium Academic Intelligence")
