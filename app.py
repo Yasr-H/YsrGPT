@@ -3,8 +3,8 @@ import pdfplumber
 from groq import Groq
 import os
 
-# --- 1. PAGE CONFIG & PROFESSIONAL STYLE ---
-st.set_page_config(page_title="YsrGPT", page_icon="🛡️", layout="centered")
+# PAGE CONFIG & PROFESSIONAL STYLE
+st.set_page_config(page_title="🛡️ YsrGPT", page_icon="🛡️", layout="centered")
 
 # Custom CSS for a clean, professional "Executive" look
 st.markdown("""
@@ -37,14 +37,14 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True) # Corrected from unsafe_allow_stdio
 
-# --- 2. CONNECT TO GROQ CLOUD ---
+#CONNECT TO GROQ CLOUD
 if "GROQ_API_KEY" not in st.secrets:
     st.error("⚠️ API Key missing! Add GROQ_API_KEY to your Streamlit Secrets.")
     st.stop()
 
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
-# --- 3. OPTIMIZED KNOWLEDGE ENGINE ---
+#OPTIMIZED KNOWLEDGE ENGINE
 PDF_FILE = "Academic-Policy-Manual-for-Students3.pdf"
 
 @st.cache_data
@@ -61,7 +61,7 @@ def load_university_manual():
 
 manual_text = load_university_manual()
 
-# --- SIDEBAR ---
+#SIDEBAR
 with st.sidebar:
     st.markdown("## 🛡️ YsrGPT")
     st.caption("v2.5 • Premium Academic Intelligence")
@@ -78,8 +78,8 @@ with st.sidebar:
         st.session_state.messages = []
         st.rerun()
 
-# --- 5. MAIN INTERFACE ---
-st.markdown('<p class="main-title">ysrGPT</p>', unsafe_allow_html=True)
+#MAIN INTERFACE
+st.markdown('<p class="main-title">🛡️ YsrGPT</p>', unsafe_allow_html=True)
 st.markdown('<p class="sub-text">Intelligent University Policy Navigator</p>', unsafe_allow_html=True)
 
 if not manual_text:
