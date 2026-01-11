@@ -4,7 +4,7 @@ from groq import Groq
 import os
 
 # --- 1. PAGE CONFIG & PROFESSIONAL STYLE ---
-st.set_page_config(page_title="MiRGPT", page_icon="🛡️", layout="centered")
+st.set_page_config(page_title="YsrGPT", page_icon="🛡️", layout="centered")
 
 # Custom CSS for a clean, professional "Executive" look
 st.markdown("""
@@ -63,7 +63,7 @@ manual_text = load_university_manual()
 
 # --- 4. PROFESSIONAL SIDEBAR ---
 with st.sidebar:
-    st.markdown("## 🛡️ MiRGPT")
+    st.markdown("## 🛡️ YsrGPT")
     st.caption("v2.5 • Premium Academic Intelligence")
     st.divider()
     st.markdown("### 📋 Active Policies")
@@ -79,7 +79,7 @@ with st.sidebar:
         st.rerun()
 
 # --- 5. MAIN INTERFACE ---
-st.markdown('<p class="main-title">MiRGPT</p>', unsafe_allow_html=True)
+st.markdown('<p class="main-title">ysrGPT</p>', unsafe_allow_html=True)
 st.markdown('<p class="sub-text">Intelligent University Policy Navigator</p>', unsafe_allow_html=True)
 
 if not manual_text:
@@ -89,7 +89,7 @@ if not manual_text:
 # Initialize Chat History
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "assistant", "content": "Assalam o Alaikum! I am **MiRGPT**. I have analyzed your university's academic manual. How can I help you today?"}
+        {"role": "assistant", "content": "Assalam o Alaikum! I am **YsrGPT**. I have analyzed your university's academic manual. How can I help you today?"}
     ]
 
 # Display Chat History
@@ -112,7 +112,7 @@ if prompt := st.chat_input("Ask about attendance, GPA, or policies..."):
             stream = client.chat.completions.create(
                 model="llama-3.1-8b-instant",
                 messages=[
-                    {"role": "system", "content": f"You are MiRGPT, a professional academic advisor. Use ONLY this text to answer: {manual_text[:15000]}. Be formal, precise, and helpful."},
+                    {"role": "system", "content": f"You are ysrGPT, a professional academic advisor. Use ONLY this text to answer: {manual_text[:15000]}. Be formal, precise, and helpful."},
                     {"role": "user", "content": prompt}
                 ],
                 stream=True, 
